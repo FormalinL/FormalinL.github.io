@@ -215,9 +215,22 @@ void cleanAll(address_book* kfc) {
 [回到顶部](#top)
 
 
-# 知识点记录（总的来说也算是学习日志的一部分，但由于是具体的知识点，因此不太方便和其他的合并，因此单独开一个title #
+# 知识点记录（总的来说也算是学习日志的一部分，但由于是具体的知识点，因此不太方便和其他的合并，因此单独开一个title # <br>(学习内容主要参考Cherno的视频和C++ Primer)
 [回到顶部](#top)
 
 ## class and struct ##
-	class和struct本质上都是在定义一种特殊集合，目的在于方便以后使用，比如说在制作游戏中，希望对于每个玩家*player*
+	class和struct本质上都是在定义一种特殊集合，目的在于方便以后使用，比如说在制作游戏中，希望对于每个玩家*player*而言，都必须要有坐标、移动等信息，那么就可以对player专门做一个集合，然后以后的每一个玩家都可以通过定义为player类型以赋予player所有的信息，如：
+
+	```
+	class player
+	{
+		float x,y,speed;
+		void move(float X,float Y)
+		{
+			x += X*speed;
+			y += Y*speed;
+		}
+	};
+
+	```
 
