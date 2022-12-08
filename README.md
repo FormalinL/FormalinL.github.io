@@ -251,6 +251,50 @@ class和struct本质上都是在定义一种特殊集合，目的在于方便以
 而struct就刚好相反，在未声明情况下默认为public，除此之外class和struct几乎没有区别，只是使用上通常将struct内单纯只包含数据而没有函数一类的。<br>
 [回到顶部](#top)
 
+## Virtual Funcitons ##
+在上文中提到我们可以构造class以及其派生类，譬如Entity和Player，那么有时我们会在基类中构造一个函数，而在其派生类中使用，然而由于需求，我们有时需要重新改造基类中的函数，比如二者的输出值会根据其具体是基类还是派生类的改变而改变，等等，那么这时我们就需要将基类的这个函数命名为虚函数，以此表明我们会在后续的派生类中进行更改。
+
+```
+
+	//基类
+	class Entity
+	{
+	public:
+    virtual std::string GetName() {return "Entity";} //第一步，定义基类，声明基类函数为 virtual的。
+	};
+
+	//派生类
+	class Player : public Entity
+	{
+	private: 
+    	std::string m_Name; 
+	public: 
+    	Player(const std::string& name):m_Name (name) {} 
+    	//第二步，定义派生类(继承基类)，派生类实现了定义在基类的 virtual 函数。
+    	std::string GetName() override {return m_Name;}  //C++11新标准允许给被重写的函数用"override"关键字标记,增强代码可读性。
+	};
+
+	void printName(Entity* entity){
+    	std::cout << entity -> GetName() << std::endl;
+	}
+
+	int main(){
+    	Entity* e = new Entity();
+    	printName(e); 
+    	//第三步，声明基类指针，并指向派生类，调用`virtual`函数，此时虽然是基类指针，但调用的是派生类实现的基类virtual函数。Entity* p = new Player("cherno");也可以
+    	Player* p = new Player("cherno"); 
+    	printName(p); 
+	}
+
+```
+其打印结果为
+
+```
+Entity
+Player
+```
+
+
 
 
 
