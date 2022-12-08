@@ -219,9 +219,9 @@ void cleanAll(address_book* kfc) {
 [回到顶部](#top)
 
 ## class and struct ##	
-	class和struct本质上都是在定义一种特殊集合，目的在于方便以后使用，比如说在制作游戏中，希望对于每个玩家player而言，都必须要有坐标、移动等信息，那么就可以对player专门做一个集合，然后以后的每一个玩家都可以通过定义为player类型以赋予player所有的信息，如：
+class和struct本质上都是在定义一种特殊集合，目的在于方便以后使用，比如说在制作游戏中，希望对于每个玩家player而言，都必须要有坐标、移动等信息，那么就可以对player专门做一个集合，然后以后的每一个玩家都可以通过定义为player类型以赋予player所有的信息，如：
 
-	```
+```
 	class player
 	{
 		float x,y,speed;
@@ -232,11 +232,11 @@ void cleanAll(address_book* kfc) {
 		}
 	};
 
-	```
-	在上述例子中，很重要的一点就在于class的定义最后有分号，这也是它和函数的区别之一。那么struct实际上也一样，可以通过struct来构造一种集合，便于以后的使用，二者的区别就在于，在实际这个例子中，class中的内容默认是私有的(private)，因此在具体使用中，除非专门说明将其改为public，否则不可调用其中内容
+```
 
-	```
-	class player
+在上述例子中，很重要的一点就在于class的定义最后有分号，这也是它和函数的区别之一。那么struct实际上也一样，可以通过struct来构造一种集合，便于以后的使用，二者的区别就在于，在实际这个例子中，class中的内容默认是私有的(private)，因此在具体使用中，除非专门说明将其改为public，否则不可调用其中内容
+
+```
 	{
 		public:     //用来说明以下内容为公共的
 		float x,y,speed;
@@ -247,7 +247,9 @@ void cleanAll(address_book* kfc) {
 		}
 	};
 
-	```
+```
+
+
 	
 
 	
