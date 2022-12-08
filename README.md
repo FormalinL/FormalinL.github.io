@@ -216,4 +216,8 @@ void cleanAll(address_book* kfc) {
 
 
 # 知识点记录（总的来说也算是学习日志的一部分，但由于是具体的知识点，因此不太方便和其他的合并，因此单独开一个title #
+[回到顶部](#top)
+
+## class and struct ##
+	class和struct本质上都是在定义一种特殊集合，目的在于方便以后使用，比如说在制作游戏中，希望对于每个玩家*player*
 
